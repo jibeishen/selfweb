@@ -3,10 +3,12 @@
 一个零构建的静态个人站点：手写 HTML / CSS，没有 npm、没有打包、没有依赖。
 包含首页、作品集、简历（可打印成 PDF）、博客列表与三篇文章。
 
+站点位于工作区的 `selfweb/` 子目录，工作区根目录可以继续放其他项目。
+
 ## 本地预览
 
 ```bash
-cd default-workspace
+cd ~/Documents/deepseek-harness/default-workspace/selfweb
 python3 -m http.server 8000
 # 打开 http://localhost:8000
 ```
@@ -42,15 +44,16 @@ python3 -m http.server 8000
 - **任意仓库名**：地址是 `https://<用户名>.github.io/<仓库名>/`。
   站内链接全是相对路径，放在子路径下也能正常工作。
 
-然后在本目录执行：
+仓库已经初始化并提交过（Git 根目录就是这个 `selfweb/` 文件夹），
+在 GitHub 上建好空仓库后，回到本目录执行：
 
 ```bash
-git init -b main
-git add .
-git commit -m "初始化个人主页"
+cd ~/Documents/deepseek-harness/default-workspace/selfweb
 git remote add origin git@github.com:<用户名>/<仓库名>.git
 git push -u origin main
 ```
+
+如果是把项目复制到一台新机器、重新开始，才需要先 `git init -b main` 并提交一次。
 
 如果没配置 SSH，把远程地址换成 HTTPS：
 `https://github.com/<用户名>/<仓库名>.git`，推送时用 Personal Access Token 当密码。
