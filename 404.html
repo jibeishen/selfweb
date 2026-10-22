@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>页面不存在 · 你的名字</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #faf8f4;
+      --text: #1f1d1a;
+      --muted: #6f6a61;
+      --line: #e7e1d7;
+    }
+    [data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #141310;
+      --text: #ece7de;
+      --muted: #a49c90;
+      --line: #2d2a24;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 32px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.75;
+      text-align: center;
+    }
+    .code {
+      margin: 0;
+      font-size: clamp(4rem, 16vw, 8rem);
+      font-weight: 700;
+      letter-spacing: -0.06em;
+      line-height: 1;
+      color: var(--line);
+    }
+    h1 { font-size: 1.5rem; margin: 8px 0 12px; letter-spacing: -0.02em; }
+    p { color: var(--muted); margin: 0 0 26px; }
+    a {
+      display: inline-block;
+      padding: 11px 20px;
+      border-radius: 999px;
+      background: var(--text);
+      color: var(--bg);
+      text-decoration: none;
+      font-size: 14.5px;
+    }
+    a:hover { background: #a4401f; color: #fff; }
+  </style>
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("theme");
+        if (saved === "dark" || (!saved && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      } catch (err) {}
+      // GitHub Pages 项目站点部署在 /仓库名/ 下，回到正确的站点根目录
+      var host = location.hostname;
+      var first = location.pathname.split("/").filter(Boolean)[0] || "";
+      var home = /\.github\.io$/i.test(host) && first ? "/" + first + "/" : "/";
+      document.addEventListener("DOMContentLoaded", function () {
+        var link = document.getElementById("home");
+        if (link) link.setAttribute("href", home);
+      });
+    })();
+  </script>
+</head>
+<body>
+  <main>
+    <p class="code">404</p>
+    <h1>这里什么都没有</h1>
+    <p>页面可能被移动或删除了。要不回首页看看？</p>
+    <a id="home" href="/">回到首页</a>
+  </main>
+</body>
+</html>

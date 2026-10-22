@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>博客 · 你的名字</title>
+  <meta name="description" content="关于设计、代码与日常的笔记。">
+  <meta name="theme-color" content="#faf8f4">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("theme");
+        if (saved === "dark" || (!saved && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      } catch (err) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../index.html">你的名字<span class="brand-dot">.</span></a>
+
+      <nav class="nav" id="nav" aria-label="主导航">
+        <a href="../index.html">首页</a>
+        <a href="../projects.html">作品</a>
+        <a href="index.html" aria-current="page">博客</a>
+        <a href="../resume.html">简历</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="切换到深色模式" aria-pressed="false">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.6 6.6 0 0 0 9.8 9.8Z"></path>
+          </svg>
+        </button>
+
+        <button class="icon-btn menu-btn" id="menu-toggle" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="nav">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-head wrap">
+      <p class="eyebrow">写作</p>
+      <h1>写下来的东西</h1>
+      <p class="lede">关于设计、代码和一些日常的笔记。不定期更新，想到什么写什么。</p>
+    </section>
+
+    <div class="wrap" style="padding-bottom: 72px;">
+      <ul class="post-list">
+        <li>
+          <a class="post-item" href="why-static.html">
+            <span class="post-date">2026-09-28</span>
+            <div>
+              <h3>为什么这个站点没有构建步骤</h3>
+              <p>没有 npm、没有打包、没有 CI。聊聊手写 HTML 的取舍，以及复杂度该由谁承担。</p>
+            </div>
+            <span class="post-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li>
+          <a class="post-item" href="hello-world.html">
+            <span class="post-date">2026-08-16</span>
+            <div>
+              <h3>从一张白纸开始</h3>
+              <p>为什么要有一个自己的主页，以及第一篇文章应该写什么。</p>
+            </div>
+            <span class="post-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li>
+          <a class="post-item" href="reading-workflow.html">
+            <span class="post-date">2026-07-20</span>
+            <div>
+              <h3>我的阅读清单工作流</h3>
+              <p>从「稍后读」到「读完」：一个不需要意志力的流程。</p>
+            </div>
+            <span class="post-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© <span data-year>2026</span> 你的名字 · 用 HTML 与 CSS 手写</p>
+      <p><a href="../index.html">回到首页 ↑</a></p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

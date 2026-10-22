@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>简历 · 你的名字</title>
+  <meta name="description" content="你的名字的简历：产品设计与前端开发经历。">
+  <meta name="theme-color" content="#faf8f4">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("theme");
+        if (saved === "dark" || (!saved && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      } catch (err) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">你的名字<span class="brand-dot">.</span></a>
+
+      <nav class="nav" id="nav" aria-label="主导航">
+        <a href="index.html">首页</a>
+        <a href="projects.html">作品</a>
+        <a href="blog/index.html">博客</a>
+        <a href="resume.html" aria-current="page">简历</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="切换到深色模式" aria-pressed="false">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.6 6.6 0 0 0 9.8 9.8Z"></path>
+          </svg>
+        </button>
+
+        <button class="icon-btn menu-btn" id="menu-toggle" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="nav">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="resume wrap">
+    <div class="resume-head">
+      <div>
+        <h1>你的名字</h1>
+        <p class="role">产品设计师 / 前端开发者</p>
+      </div>
+      <ul class="resume-contact">
+        <li><a href="mailto:hi@example.com">hi@example.com</a></li>
+        <li>杭州 · 可远程</li>
+        <li><a href="https://github.com/your-username">github.com/your-username</a></li>
+      </ul>
+    </div>
+
+    <div class="resume-actions no-print">
+      <button class="btn btn-solid" type="button" onclick="window.print()">打印 / 存为 PDF</button>
+      <a class="btn btn-ghost" href="mailto:hi@example.com">联系我</a>
+    </div>
+
+    <div class="resume-grid">
+      <div>
+        <section class="resume-section">
+          <h2>简介</h2>
+          <p>
+            八年产品设计与前端经验，擅长把模糊的问题拆成可交付的方案，并亲手实现。
+            做过 B 端数据产品、面向消费者的 App，以及需要长期维护的设计系统。
+          </p>
+        </section>
+
+        <section class="resume-section">
+          <h2>工作经历</h2>
+          <ul class="timeline">
+            <li>
+              <span class="when">2023 — 至今</span>
+              <h3>独立设计师 / 开发者</h3>
+              <p class="where">自由职业 · 杭州</p>
+              <p>为三家早期团队做产品设计与前端实现；搭建可复用的组件与文档，把设计到上线的周期从三周缩短到一周。</p>
+            </li>
+            <li>
+              <span class="when">2020 — 2023</span>
+              <h3>高级产品设计师</h3>
+              <p class="where">某某科技 · 杭州</p>
+              <p>负责 B 端数据产品的体验设计；主导设计系统落地，覆盖 40+ 页面；与前端共建组件库，减少重复设计。</p>
+            </li>
+            <li>
+              <span class="when">2018 — 2020</span>
+              <h3>交互设计师</h3>
+              <p class="where">某某工作室 · 上海</p>
+              <p>参与两款移动端产品从 0 到 1；负责交互稿、原型与可用性测试，推动上线后的两轮体验迭代。</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="resume-section">
+          <h2>教育</h2>
+          <ul class="timeline">
+            <li>
+              <span class="when">2014 — 2018</span>
+              <h3>视觉传达设计 · 本科</h3>
+              <p class="where">某某大学</p>
+            </li>
+          </ul>
+        </section>
+      </div>
+
+      <aside class="resume-aside">
+        <section class="resume-section">
+          <h2>技能</h2>
+          <ul class="chips">
+            <li>产品设计</li>
+            <li>交互设计</li>
+            <li>设计系统</li>
+            <li>用户研究</li>
+            <li>HTML / CSS</li>
+            <li>JavaScript</li>
+            <li>Figma</li>
+            <li>数据可视化</li>
+          </ul>
+        </section>
+
+        <section class="resume-section">
+          <h2>语言</h2>
+          <p>中文（母语）<br>English（工作沟通）</p>
+        </section>
+
+        <section class="resume-section">
+          <h2>其他</h2>
+          <p>
+            2022 某某设计奖 · 入围<br>
+            常年写作，每月一篇<br>
+            可接受远程协作
+          </p>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© <span data-year>2026</span> 你的名字 · 用 HTML 与 CSS 手写</p>
+      <p><a href="#main">回到顶部 ↑</a></p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>作品 · 你的名字</title>
+  <meta name="description" content="你的名字的项目作品集：产品设计、前端开发与实验性小工具。">
+  <meta name="theme-color" content="#faf8f4">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("theme");
+        if (saved === "dark" || (!saved && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      } catch (err) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">你的名字<span class="brand-dot">.</span></a>
+
+      <nav class="nav" id="nav" aria-label="主导航">
+        <a href="index.html">首页</a>
+        <a href="projects.html" aria-current="page">作品</a>
+        <a href="blog/index.html">博客</a>
+        <a href="resume.html">简历</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="切换到深色模式" aria-pressed="false">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.6 6.6 0 0 0 9.8 9.8Z"></path>
+          </svg>
+        </button>
+
+        <button class="icon-btn menu-btn" id="menu-toggle" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="nav">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-head wrap">
+      <p class="eyebrow">作品</p>
+      <h1>做过的一些东西</h1>
+      <p class="lede">
+        产品设计、前端实现，以及一些自己用的小工具。下面按类型筛选，点击卡片可以看到更多。
+      </p>
+    </section>
+
+    <div class="wrap">
+      <div class="filter" data-filter role="group" aria-label="按类型筛选作品">
+        <button type="button" data-filter-value="all" aria-pressed="true">全部</button>
+        <button type="button" data-filter-value="design" aria-pressed="false">产品设计</button>
+        <button type="button" data-filter-value="code" aria-pressed="false">前端开发</button>
+        <button type="button" data-filter-value="lab" aria-pressed="false">实验</button>
+      </div>
+
+      <div class="grid grid-2" style="padding-bottom: 80px;">
+        <a class="card" href="https://github.com/your-username" data-tags="design code">
+          <div class="card-top"><span>2026</span><span>设计与开发</span></div>
+          <h3>个人主页</h3>
+          <p>纯手写 HTML / CSS 的个人站点：移动端优先、深色模式、打印友好，零依赖部署到 GitHub Pages。</p>
+          <div class="card-tags">
+            <span class="tag tag-accent">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">GitHub Pages</span>
+          </div>
+        </a>
+
+        <a class="card" href="https://github.com/your-username" data-tags="code lab">
+          <div class="card-top"><span>2025</span><span>前端开发</span></div>
+          <h3>阅读清单</h3>
+          <p>把「稍后读」变成「读完了」。本地优先的阅读队列，支持离线、标签与全文搜索。</p>
+          <div class="card-tags">
+            <span class="tag">JavaScript</span>
+            <span class="tag">PWA</span>
+            <span class="tag">IndexedDB</span>
+          </div>
+        </a>
+
+        <a class="card" href="https://github.com/your-username" data-tags="design">
+          <div class="card-top"><span>2025</span><span>产品设计</span></div>
+          <h3>运营数据看板</h3>
+          <p>重做一套内部指标看板：统一 30+ 个指标口径，重建信息层级，让「今天发生了什么」一眼可见。</p>
+          <div class="card-tags">
+            <span class="tag">设计系统</span>
+            <span class="tag">数据可视化</span>
+          </div>
+        </a>
+
+        <a class="card" href="https://github.com/your-username" data-tags="design code">
+          <div class="card-top"><span>2024</span><span>设计与开发</span></div>
+          <h3>组件库文档站</h3>
+          <p>为设计系统写的文档与示例：每个组件的用法、状态、可访问性说明，以及可直接复制的代码。</p>
+          <div class="card-tags">
+            <span class="tag">设计系统</span>
+            <span class="tag">文档</span>
+          </div>
+        </a>
+
+        <a class="card" href="https://github.com/your-username" data-tags="code lab">
+          <div class="card-top"><span>2024</span><span>实验</span></div>
+          <h3>命令行记账</h3>
+          <p>给自己写的一个极简记账工具：一行命令记一笔，月末自动生成分类报表。</p>
+          <div class="card-tags">
+            <span class="tag">CLI</span>
+            <span class="tag">Python</span>
+          </div>
+        </a>
+
+        <a class="card" href="https://github.com/your-username" data-tags="lab design">
+          <div class="card-top"><span>2024</span><span>写作</span></div>
+          <h3>字体排印小册</h3>
+          <p>一份关于中文网页排印的笔记：字号、行高、字距，以及在不同屏幕上的取舍。</p>
+          <div class="card-tags">
+            <span class="tag">排印</span>
+            <span class="tag">写作</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© <span data-year>2026</span> 你的名字 · 用 HTML 与 CSS 手写</p>
+      <p><a href="#main">回到顶部 ↑</a></p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

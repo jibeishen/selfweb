@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>为什么这个站点没有构建步骤 · 你的名字</title>
+  <meta name="description" content="没有 npm、没有打包、没有 CI。聊聊手写 HTML 的取舍，以及复杂度该由谁承担。">
+  <meta name="theme-color" content="#faf8f4">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("theme");
+        if (saved === "dark" || (!saved && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      } catch (err) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../index.html">你的名字<span class="brand-dot">.</span></a>
+
+      <nav class="nav" id="nav" aria-label="主导航">
+        <a href="../index.html">首页</a>
+        <a href="../projects.html">作品</a>
+        <a href="index.html" aria-current="page">博客</a>
+        <a href="../resume.html">简历</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="切换到深色模式" aria-pressed="false">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.6 6.6 0 0 0 9.8 9.8Z"></path>
+          </svg>
+        </button>
+
+        <button class="icon-btn menu-btn" id="menu-toggle" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="nav">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="article wrap-narrow">
+      <p class="article-meta"><a href="index.html">← 全部文章</a></p>
+
+      <header class="article-head">
+        <h1>为什么这个站点没有构建步骤</h1>
+        <p class="article-meta">
+          <time datetime="2026-09-28">2026 年 9 月 28 日</time>
+          <span>约 4 分钟</span>
+        </p>
+      </header>
+
+      <div class="prose">
+        <p>
+          这个站点没有 <code>package.json</code>，没有 <code>node_modules</code>，没有打包器，
+          也没有持续集成。它是一个文件夹，里面是几个 HTML、一份 CSS 和一小段 JavaScript。
+          把它推到 GitHub，打开 Pages，就上线了。
+        </p>
+
+        <p>
+          这听起来像是 2005 年的做法。但我越来越确信，对「个人主页」这种规模的东西，
+          它仍然是更合理的选择。
+        </p>
+
+        <h2>构建解决了什么问题</h2>
+
+        <p>
+          现代静态站点生成器很好：Markdown 写文章、模板复用导航、自动生成标签页和 RSS。
+          当你有上百篇文章、多语言、复杂的数据关系时，这些能力是必需的。
+        </p>
+
+        <p>
+          但它们也带来一条链：Node 版本、依赖升级、构建报错、部署配置。
+          这条链平时安静，需要维护的时候又很吵。而我的站点只有六个页面，
+          一年可能改二十次。
+        </p>
+
+        <blockquote>
+          工具的成本不在于学习它，而在于它在你不想动它的时候，仍然要求你动它。
+        </blockquote>
+
+        <h2>我付出的代价</h2>
+
+        <p>手写确实有重复。导航和页脚在每个页面里都有一份，加一个栏目要改六处。</p>
+
+        <ul>
+          <li>改导航：用编辑器的多文件替换，一分钟。</li>
+          <li>加文章：复制上一篇的 HTML，改标题和正文。</li>
+          <li>检查链接：一个本地服务器，加肉眼和 <code>curl</code>。</li>
+        </ul>
+
+        <p>
+          这些代价是可见的、有限的、当天就能还清的。而构建链的代价是隐性的：
+          它在你半年后想改一行字时，先用一个红色的报错拦住你。
+        </p>
+
+        <h2>什么时候我会换掉它</h2>
+
+        <p>
+          我给自己定了一个明确的信号：当文章超过五十篇，或者我需要标签、全文搜索、自动 RSS 时，
+          再引入生成器。到那时候，构建带来的收益会超过它的成本。
+        </p>
+
+        <p>
+          在那之前，本地预览只需要一行命令：
+        </p>
+
+        <pre><code>python3 -m http.server 8000</code></pre>
+
+        <p>
+          简单不是少做事，而是把复杂留在你看得见的地方。
+        </p>
+      </div>
+
+      <footer class="article-footer">
+        <a href="hello-world.html">← 上一篇：从一张白纸开始</a>
+        <a href="index.html">全部文章 →</a>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© <span data-year>2026</span> 你的名字 · 用 HTML 与 CSS 手写</p>
+      <p><a href="../index.html">回到首页 ↑</a></p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

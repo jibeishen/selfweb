@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>从一张白纸开始 · 你的名字</title>
+  <meta name="description" content="为什么要有一个自己的主页，以及第一篇文章应该写什么。">
+  <meta name="theme-color" content="#faf8f4">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("theme");
+        if (saved === "dark" || (!saved && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      } catch (err) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../index.html">你的名字<span class="brand-dot">.</span></a>
+
+      <nav class="nav" id="nav" aria-label="主导航">
+        <a href="../index.html">首页</a>
+        <a href="../projects.html">作品</a>
+        <a href="index.html" aria-current="page">博客</a>
+        <a href="../resume.html">简历</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="切换到深色模式" aria-pressed="false">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.6 6.6 0 0 0 9.8 9.8Z"></path>
+          </svg>
+        </button>
+
+        <button class="icon-btn menu-btn" id="menu-toggle" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="nav">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="article wrap-narrow">
+      <p class="article-meta"><a href="index.html">← 全部文章</a></p>
+
+      <header class="article-head">
+        <h1>从一张白纸开始</h1>
+        <p class="article-meta">
+          <time datetime="2026-08-16">2026 年 8 月 16 日</time>
+          <span>约 3 分钟</span>
+        </p>
+      </header>
+
+      <div class="prose">
+        <p>
+          我大概有五年没有更新过任何公开的写作了。内容都散在几个平台上：一条朋友圈、一条推文、
+          一个没有下文的文档。它们不算消失，但也不属于我。
+        </p>
+
+        <p>
+          于是就有了这个站点。它很小，只有几个页面，没有评论，没有阅读量统计。
+          它的唯一作用，是让我有一个地方，把想法完整地写完。
+        </p>
+
+        <h2>为什么是自己的域名</h2>
+
+        <p>
+          平台会改版，会关停，会把内容折叠进一个需要登录才能看的角落。
+          而一个域名加上一个静态目录，二十年后大概还能打开。
+          这不是什么远见，只是把「写下来的东西」放在一个自己能控制的地方。
+        </p>
+
+        <h2>第一篇文章写什么</h2>
+
+        <p>
+          我的建议是：不要写「开站宣言」。那类文章通常只有作者自己会读第二遍。
+          写一件你最近真正想清楚的小事，哪怕只有三百字。
+        </p>
+
+        <p>
+          这篇文章是第 0 篇，作用是让模板跑起来。下一篇会写点具体的：
+          关于这个站点为什么没有用任何框架。
+        </p>
+
+        <h2>接下来的计划</h2>
+
+        <ul>
+          <li>每月至少一篇，不追热点，只写自己做过的事。</li>
+          <li>文章不删，观点变了就加一段更新说明。</li>
+          <li>保持这个站点可以被一行命令在本地跑起来。</li>
+        </ul>
+
+        <p>
+          如果你也在犹豫要不要开始，我的建议是：先把第一个页面做出来，
+          写得不好没关系，空白才是最贵的。
+        </p>
+      </div>
+
+      <footer class="article-footer">
+        <a href="reading-workflow.html">← 上一篇：我的阅读清单工作流</a>
+        <a href="why-static.html">下一篇：为什么这个站点没有构建步骤 →</a>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© <span data-year>2026</span> 你的名字 · 用 HTML 与 CSS 手写</p>
+      <p><a href="../index.html">回到首页 ↑</a></p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
